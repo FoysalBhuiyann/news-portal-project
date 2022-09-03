@@ -51,9 +51,9 @@ const showModal = (id) => {
 
   console.log(modalData);
 
-    $("#newsModal").empty();
+  $("#newsModal").empty();
 
-    const element = `
+  const element = `
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
@@ -63,6 +63,9 @@ const showModal = (id) => {
               <div class="modal-body">
                   ${modalData.details}
               </div>
+              <div class="modal-body">
+                  ${modalData.author.name}
+              </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Save changes</button>
@@ -71,7 +74,7 @@ const showModal = (id) => {
       </div>
       `;
 
-    $("#newsModal").append(element);
+  $("#newsModal").append(element);
 
   const newsModal = new bootstrap.Modal(
     document.getElementById("newsModal"),
